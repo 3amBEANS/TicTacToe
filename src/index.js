@@ -1,12 +1,17 @@
-import React, { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import "./styles.css";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './TicTacToe.css';
+import Game from './App'; // or wherever your Tic Tac Toe component is located
 
-import App from "./App";
+// Add Tailwind CDN script dynamically
+const tailwindScript = document.createElement('script');
+tailwindScript.src = 'https://cdn.tailwindcss.com';
+tailwindScript.async = true;
+document.head.appendChild(tailwindScript);
 
-const root = createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
+  <React.StrictMode>
+    <Game />
+  </React.StrictMode>
 );
